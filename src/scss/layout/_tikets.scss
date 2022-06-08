@@ -1,0 +1,55 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.tikets{
+    padding: 5rem 0;
+    h3{
+        text-align: center;
+        color: v.$blackColor;
+        margin-bottom: 2rem;
+    }
+    .container__tikets{
+        @include m.tablet {
+            @include m.grid(2, 5rem)
+        }
+    }
+}
+.pase{
+    color: v.$blackColor;
+
+    .pase-type{
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    &__header, &__footer{
+        padding: 1rem;
+        p{
+            text-align: center;
+            margin: 0;
+        }
+    }
+    &__header{
+        background-color: v.$blackColor;
+        p{
+            color: v.$whiteColor;
+            text-transform: uppercase;
+            font-size: 1.6rem;
+        }
+    }
+    &__body{
+        background-color: v.$redColor;
+        ul{
+            @include m.list-reset;
+            li, :nth-child(odd) {
+                background-color: v.$redColor;
+                padding: 1rem;
+            }
+        }
+    }
+    &__footer{
+        background-color: v.$yellowColor;
+        p{
+            font-size: 2rem;
+        }
+    }
+}

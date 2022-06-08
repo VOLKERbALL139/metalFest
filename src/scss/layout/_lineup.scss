@@ -1,0 +1,69 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.lineup{
+    background-color: v.$blackColor;
+    padding: 5rem 0;
+
+    h3, p{
+        text-align: center;
+        color: v.$redColor;
+    }
+    .day{
+        text-transform: uppercase;
+        margin: 5rem 0;
+    }
+}
+.container__scenary{
+    @include m.tablet {
+        @include m.grid(2, 5rem);
+    }
+    p{
+        color: v.$blackColor;    
+    }
+    .scenary{
+    padding-top: 2rem;
+    
+    p{
+        &:after{
+        content: '';
+        display: block;
+        width: 20rem;
+        height: 20rem;
+        background-size: 15rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: 2rem auto 0 auto;
+    }
+    }
+    
+    }
+}
+.icon_a .scenary__name:after{
+    background-image: url(../img/icon_a.png);
+}
+.icon_b .scenary__name:after{
+    background-image: url(../img/icon_b.png);
+}
+.calendary{
+    @include m.list-reset;
+    li{
+        padding: 2.5rem;
+        font-weight: 700;
+        span{
+            font-weight: 400;
+        }
+    }
+}
+.bg_a{
+    background-color: v.$yellowColor;
+    li:nth-child(odd){
+        background-color: darken(v.$yellowColor, 15%);
+    }
+}
+.bg_b{
+    background-color: v.$orangeColor;
+    li:nth-child(odd){
+        background-color: darken(v.$orangeColor, 15%);
+    }
+}

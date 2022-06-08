@@ -1,0 +1,11 @@
+@use 'base/variables' as v;
+
+.footer{
+    background-color: v.$blackColor;
+    padding: 1rem;
+    p{
+        color: v.$whiteColor;
+        margin: 0;
+        text-align: center;
+    }
+}
